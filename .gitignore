@@ -1,6 +1,6 @@
 ##ignore this file##
 /node_modules/
-/dist/*.js
+/dist
 .project
 .settings
 /package-lock.json
