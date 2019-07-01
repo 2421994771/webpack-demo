@@ -8,6 +8,7 @@ module.exports = {
     entry: {
         app: './src/index.js',
       //  print: './src/print.js' ，启用HMR 注释，因为 print.js 被 index.js使用
+        another: './src/another-module.js'
     },
     devtool: 'inline-source-map',
     // 默认使用8080端口，
@@ -26,8 +27,19 @@ module.exports = {
         }),
         // 启用HRM时添加
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        /**  已被废弃 optimization 以作为一个配置属性
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common' // 指定公共bundle的名称
+        })
+        */
     ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            name: 'common'
+        }
+    },
     output: {
         //filename: 'bundle.js',
         // name 为 入口名

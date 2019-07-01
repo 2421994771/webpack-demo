@@ -1,5 +1,5 @@
 const merge = require('webpack-merge');
-const common = requier('./webpack.common.js');
+const common = require('./webpack.common.js');
 
 // merge 似乎是，相同属性，数组合并，对象覆盖。
 module.exports = merge(common, {

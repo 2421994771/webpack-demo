@@ -1,6 +1,6 @@
 // 开发、生产环境 公用配置
 const path = require('path');
-const { cleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
         app: './src/index.js'
     },
     plugins: [
-        new cleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         new htmlWebpackPlugin({
             title: 'Production'
         })
